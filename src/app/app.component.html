@@ -1,75 +1,23 @@
 <div class="px-10 py-8">
-  <nav class="flex justify-between border-b pb-4 border-gray-300">
-<!--    <a href="#" class="text-lg font-bold tracking-tight">Let'sGO</a>-->
-    <ul class="basis-1/4"></ul>
-    <ul class="basis-1/2 flex gap-4 font-sm font-light tracking-tight" routerLinkActive="active">
-      <li>
-        <a href="/home"  routerLink="home">Main</a>
-      </li>
-      <li>
-        <a href="/home"  routerLink="home">About Us</a>
-      </li>
-      <li>
-        <a href="/home"  routerLink="home">Tours</a>
-      </li>
-      <li>
-        <a href="/home"  routerLink="home">Gallery</a>
-      </li>
-      <li>
-        <a href="/home"  routerLink="home">Reviews</a>
-      </li>
-      <li>
-        <a href="/home"  routerLink="home">Contacts</a>
-      </li>
-      <li *ngIf="showAdminBoard">
-        <a href="/admin" routerLink="admin">Admin Board</a>
-      </li>
-      <li *ngIf="showModeratorBoard">
-        <a href="/mod" routerLink="mod">Moderator Board</a>
-      </li>
-      <li>
-        <a href="/user" *ngIf="isLoggedIn" routerLink="user">User</a>
-      </li>
-    </ul>
-
-    <ul class="col-span-2 flex" *ngIf="!isLoggedIn">
-      <li class="flex gap-2">
-        <a href="#"><img src="/assets/vuesax/linear/translate.svg" alt="translate"></a>
-        <a href="#"><img src="/assets/vuesax/linear/search-normal.svg" alt="Search"></a>
-        <a href="/login" routerLink="login"><img src="/assets/vuesax/linear/user.svg" alt="User"></a>
-      </li>
-    </ul>
-
-    <ul *ngIf="isLoggedIn">
-      <li>
-        <a href="/profile" routerLink="profile">{{ username }}</a>
-      </li>
-      <li>
-        <a href (click)="logout()">LogOut</a>
-      </li>
-    </ul>
-  </nav>
-
   <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-        </svg>
-        <span class="ml-3 text-xl">Let's go</span>
+        <img src="./assets/img/logo.png" alt="logo" class="w-12 h-12 text-white bg-indigo-600 rounded-full">
+        <span class="ml-3 text-xl">LET'S <span class="text-indigo-600">GO</span></span>
       </a>
       <nav class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
         <a href="" class="mr-5 hover:text-gray-900">Main</a>
         <a href="/tours" class="mr-5 hover:text-gray-900">Tours</a>
         <a href="/faq" class="mr-5 hover:text-gray-900">FAQ</a>
-        <a class="mr-5 hover:text-gray-900">Fourth Link</a>
       </nav>
       <div class="inline-flex items-center border-0 py-1 px-3 rounded text-base mt-4 md:mt-0">
-        <ul class="col-span-2 flex" *ngIf="!isLoggedIn">
+        <ul class="col-span-2 flex">
           <li class="flex gap-2">
             <a href="#"><img src="/assets/vuesax/linear/translate.svg" alt="translate"></a>
             <a href="#"><img src="/assets/vuesax/linear/search-normal.svg" alt="Search"></a>
-            <a href="/login" routerLink="login"><img src="/assets/vuesax/linear/user.svg" alt="User"></a>
+            <a *ngIf="!isLoggedIn" href="/login" routerLink="login"><img src="/assets/vuesax/linear/user.svg" alt="User"></a>
+            <a *ngIf="isLoggedIn" href="/profile" routerLink="profile"><img src="/assets/vuesax/linear/user.svg" alt="User">{{username}}</a>
+            <a *ngIf="isLoggedIn" href (click)="logout()"><img src="/assets/vuesax/linear/user.svg" alt="User"></a>
           </li>
         </ul>
       </div>
@@ -82,11 +30,9 @@
 
   <footer class="text-gray-600 body-font">
     <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
-      <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-        </svg>
-        <span class="ml-3 text-xl">Let's go</span>
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <img src="./assets/img/logo.png" alt="logo" class="w-12 h-12 text-white bg-indigo-600 rounded-full">
+        <span class="ml-3 text-xl">LET'S <span class="text-indigo-600">GO</span></span>
       </a>
       <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2022 —
         <a href="https://twitter.com/knyttneve" class="text-gray-600 ml-1" rel="noopener noreferrer" target="_blank">@test</a>

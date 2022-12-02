@@ -10,6 +10,7 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import {ToursComponent} from "./tours/tours.component";
 import {FaqComponent} from "./faq/faq.component";
+import {TourDetailsComponent} from "./tour-details/tour-details.component";
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'admin', component: BoardAdminComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'tours', component: ToursComponent },
-  { path: 'faq', component: FaqComponent }
+  { path: 'faq', component: FaqComponent },
+  { path: 'tours/tour', component: TourDetailsComponent }
 ];
 
 @NgModule({

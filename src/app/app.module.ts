@@ -16,6 +16,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ToursComponent } from './tours/tours.component';
 import { FaqComponent } from './faq/faq.component';
+import { TourDetailsComponent } from './tour-details/tour-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FaqComponent } from './faq/faq.component';
     BoardModeratorComponent,
     BoardUserComponent,
     ToursComponent,
-    FaqComponent
+    FaqComponent,
+    TourDetailsComponent
   ],
   imports: [
     BrowserModule,
